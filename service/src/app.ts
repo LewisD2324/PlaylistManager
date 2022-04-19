@@ -4,6 +4,7 @@ import helmet from "helmet";
 import Express from 'express';
 import * as config from './config';
 import { StatusCodes } from 'http-status-codes';
+import authroute from './routes/authRoute';
 
 
 const app = Express();
@@ -15,6 +16,8 @@ app.use(
   }),
 );
 app.use(helmet());
+
+authroute(app);
 
 //app.use('/playlistmanagerapi/api/v1', playlistRouter());
 
